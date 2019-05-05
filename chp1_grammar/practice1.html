@@ -28,7 +28,7 @@ body {
   <body>
     <h1>买什么好呢？</h1>
     <p title="a gentle reminder">别忘了买这些东西</p>
-	<p>这是一个测试</p>
+	<p title="test">This is a test</p>
     <ul id="purchases">
       <li>洽洽瓜子</li>
       <li>王老吉</li>
@@ -39,13 +39,24 @@ body {
       <li>丑橘</li>
     </ul>
 	<script type="text/JavaScript">
-	var paras = document.getElementsByTagName("p");
-	for (var i=0; i< paras.length; i++) {
-	  var title_text = paras[i].getAttribute("title");
-	  if (title_text != null) {
-		alert(title_text);
-	  }
-	}
+	<!-- var paras = document.getElementsByTagName("p"); -->
+	<!-- for (var i=0; i< paras.length; i++) { -->
+	  <!-- var title_text = paras[i].getAttribute("title"); -->
+	  <!-- if (title_text != null) { -->
+		<!-- alert(title_text); -->
+	  <!-- } -->
+	<!-- } -->
+	
+	var paragraphs = document.getElementsByTagName("p");
+	var paraLen = paragraphs.length;
+	if( paraLen > 0){
+		for(var i = 0 ; i < paraLen; i++){
+			var ptitle = paragraphs[i].getAttribute("title");
+			if(ptitle != null && i == 1){
+				alert(ptitle);
+			}
+		}
+	}	
 	</script>
   </body>
 </html>
